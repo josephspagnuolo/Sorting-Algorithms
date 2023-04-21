@@ -38,7 +38,7 @@ public class BubbleSort implements MapSort<String, Integer> {
 
 	public void setMap(Map<String, Integer> map_to_be_sorted) throws MapContainsNullValueException {
 		if (map_to_be_sorted.containsValue(null)) {
-			throw new MapContainsNullValueException("Map contains null value.");
+			throw new MapContainsNullValueException("The map contains a null value.");
 		} else {
 			this.map = map_to_be_sorted;
 		}

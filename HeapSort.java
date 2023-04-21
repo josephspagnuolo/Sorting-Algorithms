@@ -57,7 +57,7 @@ public class HeapSort implements MapSort<String, Double> {
 
 	public void setMap(Map<String, Double> map_to_be_sorted) {
 		if (map_to_be_sorted.containsValue(null)) {
-			throw new MapContainsNullValueException("Map contains null value.");
+			throw new MapContainsNullValueException("The map contains a null value.");
 		} else {
 			this.map = map_to_be_sorted;
 		}
