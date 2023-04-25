@@ -7,7 +7,7 @@ public class HeapSort implements MapSort<String, Double> {
 	public Map<String, Double> map;
 
 	/**
-	 * @description: Sort a map by the values in ascending order max heap sorting
+	 * @description: Sort a map by its values in ascending order max heap sorting
 	 *               algorithm.
 	 * @return: Return the corresponding key list of the sorted map.
 	 */
