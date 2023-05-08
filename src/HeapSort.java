@@ -7,13 +7,12 @@ public class HeapSort implements MapSort<String, Double> {
 	public Map<String, Double> map;
 
 	/**
-	 * @description: Sort a map by its values in ascending order max heap sorting
+	 * @description: Sort a map by its values in ascending order using max heap sorting
 	 *               algorithm.
 	 * @return: Return the corresponding key list of the sorted map.
 	 */
 	@Override
 	public ArrayList<String> sortbyValue() {
-		
 		ArrayList<String> keys = new ArrayList<String>(this.map.keySet());
 		ArrayList<Double> values = new ArrayList<Double>(this.map.values());
 		for (int i = keys.size() / 2 - 1; i >= 0; i--) {

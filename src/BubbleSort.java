@@ -2,7 +2,6 @@ package src;
 import java.util.ArrayList;
 import java.util.Map;
 
-
 public class BubbleSort implements MapSort<String, Integer> {
 	
 	public Map<String, Integer> map;
@@ -14,7 +13,6 @@ public class BubbleSort implements MapSort<String, Integer> {
 	 */
 	@Override
 	public ArrayList<String> sortbyValue() {
-
 		ArrayList<String> keys = new ArrayList<String>(this.map.keySet());
 		ArrayList<Integer> values = new ArrayList<Integer>(this.map.values());
 		for (int i = 0; i < keys.size() - 1; i++) {
