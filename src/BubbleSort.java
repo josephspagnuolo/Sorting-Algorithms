@@ -7,7 +7,7 @@ public class BubbleSort implements MapSort<String, Integer> {
 	public Map<String, Integer> map;
 
 	/**
-	 * @description: Sort a map by the values in ascending order with bubble sorting
+	 * @description: Sort a map by its values in ascending order with bubble sorting
 	 *               algorithm.
 	 * @return: Return the corresponding key list of the sorted map.
 	 */
