@@ -8,20 +8,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.HeapSort;
+import src.MergeSort;
 import src.MapContainsNullValueException;
 
 public class MergeSortTest {
 
-	HeapSort heapsort;
+	MergeSort mergesort;
 
 	@Before
 	public void setUp() throws Exception {
-		heapsort = new HeapSort();
+		mergesort = new MergeSort();
 	}
 
 	@Test
-	public void test_heap_basic() throws MapContainsNullValueException {
+	public void test_merge_basic() throws MapContainsNullValueException {
 		Map<String, Double> map_to_sort = new HashMap<String, Double>();
 		map_to_sort.put("leafs", 99.2);
 		map_to_sort.put("sens", 30.1);
@@ -40,7 +40,7 @@ public class MergeSortTest {
 		map_to_sort.put("blues", 68.0);
 		map_to_sort.put("wild", 106.4);
 
-		heapsort.setMap(map_to_sort);
+		mergesort.setMap(map_to_sort);
 
 		ArrayList<String> expected_result = new ArrayList<String>();
 		expected_result.add("flyers");
@@ -60,7 +60,7 @@ public class MergeSortTest {
 		expected_result.add("jets");
 		expected_result.add("bruins");
 
-		ArrayList<String> sort = heapsort.sortbyValue();
+		ArrayList<String> sort = mergesort.sortbyValue();
 
 		for (int i = 0; i < expected_result.size(); i++) {
 			Assert.assertEquals(expected_result.get(i), sort.get(i));
@@ -68,7 +68,7 @@ public class MergeSortTest {
 	}
 
 	@Test
-	public void test_heap_negative() throws MapContainsNullValueException {
+	public void test_merge_negative() throws MapContainsNullValueException {
 		Map<String, Double> map_to_sort = new HashMap<String, Double>();
 		map_to_sort.put("leafs", 99.2);
 		map_to_sort.put("sens", -30.1);
@@ -87,7 +87,7 @@ public class MergeSortTest {
 		map_to_sort.put("blues", -68.0);
 		map_to_sort.put("wild", 106.4);
 
-		heapsort.setMap(map_to_sort);
+		mergesort.setMap(map_to_sort);
 
 		ArrayList<String> expected_result = new ArrayList<String>();
 		expected_result.add("bruins");
@@ -107,7 +107,7 @@ public class MergeSortTest {
 		expected_result.add("wild");
 		expected_result.add("jets");
 
-		ArrayList<String> sort = heapsort.sortbyValue();
+		ArrayList<String> sort = mergesort.sortbyValue();
 
 		for (int i = 0; i < expected_result.size(); i++) {
 			Assert.assertEquals(expected_result.get(i), sort.get(i));
@@ -115,27 +115,27 @@ public class MergeSortTest {
 	}
 
 	@Test(expected = MapContainsNullValueException.class)
-	public void test_heap_exception() {
+	public void test_merge_exception() {
 		Map<String, Double> map_to_be_sorted = new HashMap<String, Double>();
 		map_to_be_sorted.put("g", 0.0);
 		map_to_be_sorted.put("p", 1.8);
 		map_to_be_sorted.put("a", null);
 		map_to_be_sorted.put("h", 3.2);
-		heapsort.setMap(map_to_be_sorted);
+		mergesort.setMap(map_to_be_sorted);
 	}
 
 	@Test
-	public void test_heap_single() throws MapContainsNullValueException {
+	public void test_merge_single() throws MapContainsNullValueException {
 		Map<String, Double> map_to_sort = new HashMap<String, Double>();
 		map_to_sort.put("leafs", 99.2);
 
-		heapsort.setMap(map_to_sort);
+		mergesort.setMap(map_to_sort);
 
 		ArrayList<String> expected_result = new ArrayList<String>();
 
 		expected_result.add("leafs");
 
-		ArrayList<String> sort = heapsort.sortbyValue();
+		ArrayList<String> sort = mergesort.sortbyValue();
 
 		for (int i = 0; i < expected_result.size(); i++) {
 			Assert.assertEquals(expected_result.get(i), sort.get(i));
@@ -143,7 +143,7 @@ public class MergeSortTest {
 	}
 
 	@Test
-	public void test_heap_long() throws MapContainsNullValueException {
+	public void test_merge_long() throws MapContainsNullValueException {
 		Map<String, Double> map_to_sort = new HashMap<String, Double>();
 		map_to_sort.put("a", -121.99);
 		map_to_sort.put("b", 131.94);
@@ -218,7 +218,7 @@ public class MergeSortTest {
 		map_to_sort.put("SS", -121.98);
 		map_to_sort.put("TT", 131.99);
 
-		heapsort.setMap(map_to_sort);
+		mergesort.setMap(map_to_sort);
 
 		ArrayList<String> expected_result = new ArrayList<String>();
 		expected_result.add("a");
@@ -294,7 +294,7 @@ public class MergeSortTest {
 		expected_result.add("JJ");
 		expected_result.add("TT");
 
-		ArrayList<String> sort = heapsort.sortbyValue();
+		ArrayList<String> sort = mergesort.sortbyValue();
 
 		for (int i = 0; i < expected_result.size(); i++) {
 			Assert.assertEquals(expected_result.get(i), sort.get(i));
