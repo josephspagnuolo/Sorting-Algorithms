@@ -21,46 +21,30 @@ public class MergeSort implements MapSort<String, Double>{
 	
 	public void sort(ArrayList<String> keys, ArrayList<Double> values, int l, int r) {
         if (l < r) {
-            // Find the middle point
-            int m = l + (r - l) / 2;
- 
-            // Sort first and second halves
-            sort(keys, values, l, m);
-            sort(keys, values, m + 1, r);
- 
-            // Merge the sorted halves
-            merge(keys, values, l, m, r);
+            int mid = l + (r - l) / 2;
+            sort(keys, values, l, mid);
+            sort(keys, values, mid + 1, r);
+            merge(keys, values, l, mid, r);
         }
     }
 	
-	public void merge(ArrayList<String> keys, ArrayList<Double> values, int l, int m, int r) {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
- 
-        /* Create temp arrays */
+	public void merge(ArrayList<String> keys, ArrayList<Double> values, int l, int mid, int r) {
+        int n1 = mid - l + 1;
+        int n2 = r - mid;
         String L1[] = new String[n1];
         Double L2[] = new Double[n1];
         String R1[] = new String[n2];
         Double R2[] = new Double[n2];
- 
-        /*Copy data to temp arrays*/
         for (int i = 0; i < n1; ++i) {
         	L1[i] = keys.get(l + i);
         	L2[i] = values.get(l + i);
-        }
-            
+        } 
         for (int j = 0; j < n2; ++j) {
-        	R1[j] = keys.get(m + 1 + j);
-        	R2[j] = values.get(m + 1 + j);
+        	R1[j] = keys.get(mid + 1 + j);
+        	R2[j] = values.get(mid + 1 + j);
         }
- 
-        /* Merge the temp arrays */
- 
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
- 
-        // Initial index of merged subarray array
+        int i = 0;
+        int j = 0;
         int k = l;
         while (i < n1 && j < n2) {
             if (L2[i] <= R2[j]) {
@@ -75,16 +59,12 @@ public class MergeSort implements MapSort<String, Double>{
             }
             k++;
         }
- 
-        /* Copy remaining elements of L[] if any */
         while (i < n1) {
         	keys.set(k, L1[i]);
         	values.set(k, L2[i]);
             i++;
             k++;
         }
- 
-        /* Copy remaining elements of R[] if any */
         while (j < n2) {
         	keys.set(k, R1[j]);
         	values.set(k, R2[j]);
