@@ -1,2 +1,2 @@
 # Sorting-Algorithms
-These are two sorting algorithms - Bubble Sort and Heap Sort - implemented in Java with maps and array lists, while also using JUnit for testing.
+These are three sorting algorithms - Bubble Sort, Heap Sort, and Merge Sort - implemented in Java with maps and array lists, while also using JUnit for testing.
