@@ -12,7 +12,7 @@ public class MergeSort implements MapSort<String, Double>{
 	 * @return: Return the corresponding key list of the sorted map.
 	 */
 	@Override
-	public ArrayList<String> sortbyValue() {
+	public ArrayList<String> sortByValue() {
 		ArrayList<String> keys = new ArrayList<String>(this.map.keySet());
 		ArrayList<Double> values = new ArrayList<Double>(this.map.values());
 		sort(keys, values, 0, values.size() - 1);
@@ -73,11 +73,11 @@ public class MergeSort implements MapSort<String, Double>{
         }
     }
 	
-	public void setMap(Map<String, Double> map_to_be_sorted) {
-		if (map_to_be_sorted.containsValue(null)) {
+	public void setMap(Map<String, Double> mapToBeSorted) {
+		if (mapToBeSorted.containsValue(null)) {
 			throw new MapContainsNullValueException("The map contains a null value.");
 		} else {
-			this.map = map_to_be_sorted;
+			this.map = mapToBeSorted;
 		}
 	}
 

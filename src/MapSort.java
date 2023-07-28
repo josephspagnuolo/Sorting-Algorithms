@@ -11,5 +11,5 @@ public interface MapSort<K, V> {
 	 * @description: Sort a map by the values in ascending order. 
 	 * @return: Return the corresponding K list of the sorted map.
 	 */
-	public ArrayList<K> sortbyValue(); 
+	public ArrayList<K> sortByValue(); 
 }
